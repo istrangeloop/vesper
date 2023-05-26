@@ -12,14 +12,14 @@ func InitDb() *sql.DB {
 	CheckError(err)
 
 	var (
-		host = os.Getenv("PSQL_HOST")
-		// port     = os.Getenv("PSQL_PORT")
+		host     = os.Getenv("PSQL_HOST")
+		port     = os.Getenv("PSQL_PORT")
 		user     = os.Getenv("PSQL_USER")
 		password = os.Getenv("PSQL_PWD")
 		dbname   = "arthurdb"
 	)
 
-	connStr := "postgres://" + user + ":" + password + "@" + host + "/" + dbname + "?sslmode=disable"
+	connStr := "postgres://" + user + ":" + password + "@" + host + ":" + port + "/" + dbname + "?sslmode=disable"
 	db, err := sql.Open("postgres", connStr)
 
 	CheckError(err)

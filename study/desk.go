@@ -4,4 +4,4 @@
 
 // you can open everything on your favorite browser.
 
-package study
+package flashcards
